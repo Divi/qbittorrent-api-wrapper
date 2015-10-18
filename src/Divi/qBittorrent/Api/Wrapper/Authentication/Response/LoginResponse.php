@@ -12,7 +12,8 @@
 namespace Divi\qBittorrent\Api\Wrapper\Authentication\Response;
 
 use Divi\qBittorrent\Api\Wrapper\Authentication\Response\Exception\BadCredentialsException;
-use Divi\qBittorrent\Api\Wrapper\Authentication\Sid;
+use Divi\qBittorrent\Api\Wrapper\Authentication\Session\Session;
+use Divi\qBittorrent\Api\Wrapper\Authentication\Session\SessionSubscriber;
 use Guzzle\Service\Command\OperationCommand;
 use Guzzle\Service\Command\ResponseClassInterface;
 
@@ -46,6 +47,27 @@ class LoginResponse implements ResponseClassInterface
             );
         }
 
-        return new Sid($params[0]['SID']);
+        $session = new Session($params[0]['SID']);
+
+        self::saveSession($command, $session);
+
+        return $session;
+    }
+
+    /**
+     * @param OperationCommand $command
+     * @param Session          $session
+     */
+    protected static function saveSession(OperationCommand $command, Session $session)
+    {
+        $listeners = $command->getClient()->getEventDispatcher()->getListeners('request.before_send');
+
+        foreach ($listeners as $listener) {
+            if ($listener[0] instanceof SessionSubscriber) {
+                $listener[0]->setSession($session);
+
+                break;
+            }
+        }
     }
 }

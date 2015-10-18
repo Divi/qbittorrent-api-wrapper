@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Divi\qBittorrent\Api\Wrapper\Authentication;
+namespace Divi\qBittorrent\Api\Wrapper\Authentication\Session;
 
 /**
  * @author Sylvain Lorinet <sylvain.lorinet@gmail.com>
  */
-class Sid
+class Session
 {
     /**
      * @var string
@@ -33,7 +33,7 @@ class Sid
     /**
      * @return string
      */
-    public function getId()
+    public function getSid()
     {
         return $this->id;
     }
