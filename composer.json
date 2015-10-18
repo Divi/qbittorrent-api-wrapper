@@ -1,0 +1,20 @@
+{
+    "name": "divi/qbittorrent-api-wrapper",
+    "authors": [
+        {
+            "name": "Sylvain Lorinet",
+            "email": "sylvain.lorinet@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzle/guzzle": "~3.9"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "~2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
