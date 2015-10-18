@@ -1,0 +1,6 @@
+{
+    "name": "qBittorrent Web UI API",
+    "includes": [
+        "authentication.json"
+    ]
+}

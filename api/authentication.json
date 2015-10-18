@@ -1,0 +1,24 @@
+{
+    "operations": {
+        "Login": {
+            "httpMethod": "POST",
+            "uri": "/login",
+            "summary": "Login into qBittorrent",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Authentication\\Response\\LoginResponse",
+            "parameters": {
+                "username": {
+                    "location": "postField",
+                    "description": "The username (default: admin)",
+                    "required": true,
+                    "type": "string"
+                },
+                "password": {
+                    "location": "postField",
+                    "description": "The password (default: adminadmin)",
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
