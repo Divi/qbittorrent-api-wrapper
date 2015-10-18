@@ -44,9 +44,11 @@ class SessionSubscriber implements EventSubscriberInterface
         /** @var Request $request */
         $request = $event['request'];
 
-        if (isset($this->session)) {
-            $request->addCookie('SID', $this->session->getSid());
+        if (null == $this->session) {
+            return;
         }
+
+        $request->addCookie('SID', $this->session->getSid());
     }
 
     /**
@@ -55,5 +57,13 @@ class SessionSubscriber implements EventSubscriberInterface
     public function setSession(Session $session)
     {
         $this->session = $session;
+    }
+
+    /**
+     *
+     */
+    public function invalidate()
+    {
+        $this->session = null;
     }
 }

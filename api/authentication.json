@@ -19,6 +19,12 @@
                     "type": "string"
                 }
             }
+        },
+
+        "Logout": {
+            "httpMethod": "POST",
+            "uri": "/logout",
+            "summary": "Logout from qBittorrent"
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Divi\qBittorrent\Api\Wrapper\Client;
 use Divi\qBittorrent\Api\Wrapper\Authentication\Response\Exception\BadCredentialsException;
 use Divi\qBittorrent\Api\Wrapper\Authentication\Session\Session;
 use Divi\qBittorrent\Api\Wrapper\Authentication\Session\SessionSubscriber;
+use Guzzle\Http\Message\Response;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 
@@ -96,6 +97,30 @@ class qBittorrentClient
         ])->execute();
 
         $this->isLogged = true;
+
+        return $response;
+    }
+
+    /**
+     * @return Response
+     */
+    public function logout()
+    {
+        $command = $this->client->getCommand('Logout');
+        $command->getRequestHeaders()->add('Content-Type', 'application/x-www-form-urlencoded');
+        $response = $command->execute();
+
+        $listeners = $this->client->getEventDispatcher()->getListeners('request.before_send');
+
+        foreach ($listeners as $listener) {
+            if ($listener[0] instanceof SessionSubscriber) {
+                $listener[0]->invalidate();
+
+                break;
+            }
+        }
+
+        $this->isLogged = false;
 
         return $response;
     }
