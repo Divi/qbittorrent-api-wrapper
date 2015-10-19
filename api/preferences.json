@@ -1,0 +1,10 @@
+{
+    "operations": {
+        "GetPreferences": {
+            "httpMethod": "GET",
+            "uri": "/query/preferences",
+            "summary": "Get the qBittorrent client preferences",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\JsonResponse"
+        }
+    }
+}

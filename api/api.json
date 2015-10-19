@@ -3,6 +3,7 @@
     "includes": [
         "version.json",
         "authentication.json",
+        "preferences.json",
         "command.json"
     ]
 }
