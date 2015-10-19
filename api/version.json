@@ -1,0 +1,24 @@
+{
+    "operations": {
+        "GetApiVersion": {
+            "httpMethod": "GET",
+            "uri": "/version/api",
+            "summary": "Get the API version",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\PlainResponse"
+        },
+
+        "GetApiMinVersion": {
+            "httpMethod": "GET",
+            "uri": "/version/api_min",
+            "summary": "Get the API minimum version",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\PlainResponse"
+        },
+
+        "GetClientMinVersion": {
+            "httpMethod": "GET",
+            "uri": "/version/qbittorrent",
+            "summary": "Get the qBittorrent client version",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\PlainResponse"
+        }
+    }
+}
