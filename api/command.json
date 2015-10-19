@@ -1,0 +1,9 @@
+{
+    "operations": {
+        "Shutdown": {
+            "httpMethod": "GET",
+            "uri": "/command/shutdown",
+            "summary": "Shutdown the qBittorrent client"
+        }
+    }
+}

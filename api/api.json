@@ -2,6 +2,7 @@
     "name": "qBittorrent Web UI API",
     "includes": [
         "version.json",
-        "authentication.json"
+        "authentication.json",
+        "command.json"
     ]
 }
