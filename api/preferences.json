@@ -5,6 +5,253 @@
             "uri": "/query/preferences",
             "summary": "Get the qBittorrent client preferences",
             "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\JsonResponse"
+        },
+
+        "SetPreferences": {
+            "httpMethod": "POST",
+            "uri": "/command/setPreferences",
+            "summary": "Get the qBittorrent client preferences",
+            "responseClass": "Divi\\qBittorrent\\Api\\Wrapper\\Client\\Response\\JsonResponse",
+            "parameters": {
+                "json": {
+                    "location": "postField",
+                    "type": "object",
+                    "properties": {
+                        "alt_dl_limit": {
+                            "type": "integer"
+                        },
+                        "alt_up_limit": {
+                            "type": "integer"
+                        },
+                        "anonymous_mode": {
+                            "type": "boolean"
+                        },
+                        "autorun_enabled": {
+                            "type": "boolean"
+                        },
+                        "autorun_program": {
+                            "type": "string"
+                        },
+                        "bypass_local_auth": {
+                            "type": "boolean"
+                        },
+                        "dht": {
+                            "type": "boolean"
+                        },
+                        "dl_limit": {
+                            "type": "integer"
+                        },
+                        "dont_count_slow_torrents": {
+                            "type": "boolean"
+                        },
+                        "download_in_scan_dirs": {
+                            "type": "array"
+                        },
+                        "dyndns_domain": {
+                            "type": "string"
+                        },
+                        "dyndns_enabled": {
+                            "type": "boolean"
+                        },
+                        "dyndns_password": {
+                            "type": "string"
+                        },
+                        "dyndns_service": {
+                            "type": "integer"
+                        },
+                        "dyndns_username": {
+                            "type": "string"
+                        },
+                        "enable_utp": {
+                            "type": "boolean"
+                        },
+                        "encryption": {
+                            "type": "integer"
+                        },
+                        "export_dir": {
+                            "type": "string"
+                        },
+                        "export_dir_fin": {
+                            "type": "string"
+                        },
+                        "force_proxy": {
+                            "type": "boolean"
+                        },
+                        "incomplete_files_ext": {
+                            "type": "boolean"
+                        },
+                        "ip_filter_enabled": {
+                            "type": "boolean"
+                        },
+                        "ip_filter_path": {
+                            "type": "string"
+                        },
+                        "ip_filter_trackers": {
+                            "type": "boolean"
+                        },
+                        "limit_tcp_overhead": {
+                            "type": "boolean"
+                        },
+                        "limit_utp_rate": {
+                            "type": "boolean"
+                        },
+                        "listen_port": {
+                            "type": "integer"
+                        },
+                        "locale": {
+                            "type": "string"
+                        },
+                        "lsd": {
+                            "type": "boolean"
+                        },
+                        "mail_notification_auth_enabled": {
+                            "type": "boolean"
+                        },
+                        "mail_notification_email": {
+                            "type": "string"
+                        },
+                        "mail_notification_enabled": {
+                            "type": "boolean"
+                        },
+                        "mail_notification_password": {
+                            "type": "string"
+                        },
+                        "mail_notification_smtp": {
+                            "type": "string"
+                        },
+                        "mail_notification_ssl_enabled": {
+                            "type": "boolean"
+                        },
+                        "mail_notification_username": {
+                            "type": "string"
+                        },
+                        "max_active_downloads": {
+                            "type": "integer"
+                        },
+                        "max_active_torrents": {
+                            "type": "integer"
+                        },
+                        "max_active_uploads": {
+                            "type": "integer"
+                        },
+                        "max_connec": {
+                            "type": "integer"
+                        },
+                        "max_connec_per_torrent": {
+                            "type": "integer"
+                        },
+                        "max_ratio": {
+                            "type": "float"
+                        },
+                        "max_ratio_act": {
+                            "type": "integer"
+                        },
+                        "max_ratio_enabled": {
+                            "type": "boolean"
+                        },
+                        "max_uploads": {
+                            "type": "integer"
+                        },
+                        "max_uploads_per_torrent": {
+                            "type": "integer"
+                        },
+                        "pex": {
+                            "type": "boolean"
+                        },
+                        "preallocate_all": {
+                            "type": "boolean"
+                        },
+                        "proxy_auth_enabled": {
+                            "type": "boolean"
+                        },
+                        "proxy_ip": {
+                            "type": "string"
+                        },
+                        "proxy_password": {
+                            "type": "string"
+                        },
+                        "proxy_peer_connections": {
+                            "type": "boolean"
+                        },
+                        "proxy_port": {
+                            "type": "integer"
+                        },
+                        "proxy_type": {
+                            "type": "integer"
+                        },
+                        "proxy_username": {
+                            "type": "string"
+                        },
+                        "queueing_enabled": {
+                            "type": "boolean"
+                        },
+                        "random_port": {
+                            "type": "boolean"
+                        },
+                        "save_path": {
+                            "type": "string"
+                        },
+                        "scan_dirs": {
+                            "type": "array"
+                        },
+                        "schedule_from_hour": {
+                            "type": "integer"
+                        },
+                        "schedule_from_min": {
+                            "type": "integer"
+                        },
+                        "schedule_to_hour": {
+                            "type": "integer"
+                        },
+                        "schedule_to_min": {
+                            "type": "integer"
+                        },
+                        "scheduler_days": {
+                            "type": "integer"
+                        },
+                        "scheduler_enabled": {
+                            "type": "boolean"
+                        },
+                        "ssl_cert": {
+                            "type": "string"
+                        },
+                        "ssl_key": {
+                            "type": "string"
+                        },
+                        "temp_path": {
+                            "type": "string"
+                        },
+                        "temp_path_enabled": {
+                            "type": "boolean"
+                        },
+                        "up_limit": {
+                            "type": "integer"
+                        },
+                        "upnp": {
+                            "type": "boolean"
+                        },
+                        "use_https": {
+                            "type": "boolean"
+                        },
+                        "web_ui_password": {
+                            "type": "string"
+                        },
+                        "web_ui_port": {
+                            "type": "integer"
+                        },
+                        "web_ui_upnp": {
+                            "type": "boolean"
+                        },
+                        "web_ui_username": {
+                            "type": "string"
+                        }
+                    },
+                    "filters": [
+                        "json_encode"
+                    ]
+                }
+            },
+            "additionnalParameters": true
         }
     }
 }
