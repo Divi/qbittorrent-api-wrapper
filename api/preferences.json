@@ -45,7 +45,10 @@
                             "type": "boolean"
                         },
                         "download_in_scan_dirs": {
-                            "type": "array"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "dyndns_domain": {
                             "type": "string"
@@ -192,7 +195,10 @@
                             "type": "string"
                         },
                         "scan_dirs": {
-                            "type": "array"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "schedule_from_hour": {
                             "type": "integer"
